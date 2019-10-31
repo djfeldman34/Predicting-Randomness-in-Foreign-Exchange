@@ -18,16 +18,16 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/forex_new.db"
-# db = SQLAlchemy(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/forex_new.db"
+db = SQLAlchemy(app)
 
-# # reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(db.engine, reflect=True)
+# reflect an existing database into a new model
+Base = automap_base()
+# reflect the tables
+Base.prepare(db.engine, reflect=True)
 
-# # Save references to each table
-# Samples_Metadata = Base.classes.forexINFO
+# Save references to each table
+Samples_Metadata = Base.classes.forexINFO
 
 
 @app.route("/")
@@ -85,41 +85,41 @@ def data():
     """Render Home Page."""
     return jsonify()
 
-# @app.route("/metadata/<sample>")
-# def sample_metadata(sample):
-#     """Return the MetaData for a given sample."""
-#     sel = [
-#         Samples_Metadata.sample,
-#         Samples_Metadata.event_date,
-#         Samples_Metadata.event_time,
-#         Samples_Metadata.loca,
-#         Samples_Metadata.exp_vol,
-#         Samples_Metadata.event_descr,
-#         Samples_Metadata.pred_acc,
-#         Samples_Metadata.unit_used,
-#         Samples_Metadata.act_data,
-#         Samples_Metadata.forc_data,
-#         Samples_Metadata.prev_data,
-#     ]
+@app.route("/metadata/<sample>")
+def sample_metadata(sample):
+    """Return the MetaData for a given sample."""
+    sel = [
+        Samples_Metadata.sample,
+        Samples_Metadata.event_date,
+        Samples_Metadata.event_time,
+        Samples_Metadata.loca,
+        Samples_Metadata.exp_vol,
+        Samples_Metadata.event_descr,
+        Samples_Metadata.pred_acc,
+        Samples_Metadata.unit_used,
+        Samples_Metadata.act_data,
+        Samples_Metadata.forc_data,
+        Samples_Metadata.prev_data,
+    ]
 
-#     results = db.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
+    results = db.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
 
-#     sample_metadata = {}
-#     for result in results:
-#         sample_metadata["sample"] = result[0]
-#         sample_metadata["Event Date"] = result[1]
-#         sample_metadata["Event Time"] = result[2]
-#         sample_metadata["Location"] = result[3]
-#         sample_metadata["Exp Volatility"] = result[4]
-#         sample_metadata["Event Desc"] = result[5]
-#         sample_metadata["Pred Acc"] = result[6]
-#         sample_metadata["Unit Used"] = result[7]
-#         sample_metadata["Actual Data"] = result[8]
-#         sample_metadata["Forc Data"] = result[9]
-#         sample_metadata["Prev Data"] = result[10]
+    sample_metadata = {}
+    for result in results:
+        sample_metadata["sample"] = result[0]
+        sample_metadata["Event Date"] = result[1]
+        sample_metadata["Event Time"] = result[2]
+        sample_metadata["Location"] = result[3]
+        sample_metadata["Exp Volatility"] = result[4]
+        sample_metadata["Event Desc"] = result[5]
+        sample_metadata["Pred Acc"] = result[6]
+        sample_metadata["Unit Used"] = result[7]
+        sample_metadata["Actual Data"] = result[8]
+        sample_metadata["Forc Data"] = result[9]
+        sample_metadata["Prev Data"] = result[10]
 
-#     print(sample_metadata)
-#     return jsonify(sample_metadata)
+    print(sample_metadata)
+    return jsonify(sample_metadata)
 
 if __name__ == '__main__':
     app.run()
