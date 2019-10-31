@@ -1,5 +1,10 @@
 function buildCharts() {
   
+  
+  var defaultURL = "/metadata/";
+d3.json(defaultURL).then(function(data) {
+  var data = [data];
+});
 
     var randReturns = [];
     var eventTypes = {
