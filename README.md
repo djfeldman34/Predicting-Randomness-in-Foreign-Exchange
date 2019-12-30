@@ -21,4 +21,10 @@ Forex is unpredictable and has to many unknown factors that contribute uniquely 
   </ul>
   
 ## User Experience
+<ul>
+  <li>Users will be able to look at and evaluate the data themselves.</li>
+<li>They will be able to look at different ranges of the days for a specific currency as well as events that occurred during the selected time range.</li>
+  
+  </ul>
+  
 # Conclusions
