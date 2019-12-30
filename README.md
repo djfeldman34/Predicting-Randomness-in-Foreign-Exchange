@@ -28,3 +28,8 @@ Forex is unpredictable and has to many unknown factors that contribute uniquely 
   </ul>
   
 # Conclusions
+
+# Project Status
+We are still working on a way to make the visualizations and data structures useful for actual market prediction.
+
+As of now, we have visualizations of the groupings of trade types without an effect way to use them for future prediction.
