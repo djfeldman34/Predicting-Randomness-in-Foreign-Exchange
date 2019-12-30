@@ -5,7 +5,14 @@ DJ (David) Feldman and Zack Feldman
 ## Hypothesis
 Forex has a natural pattern it will forever struggle to obtain, making one able to predict the ups and downs of the market, if outside contributing factors are identifiable.
 ## Null Hypothesis
-
-## Breakdown of Tasks
-# Questions Answered
+Forex is unpredictable and has to many unknown factors that contribute uniquely to the market, each of whom’s impact are dependent on one, or many, other factors; making predicting the market’s ups and downs nearly impossible.
+## Data Sources
+<ul>
+  <li>Forex data from Yahoo finance</li>
+  <li>Forex data from Kaggle.com</li>
+  <li>News articles from Kaggle.com</li>
+  <li>Major events with dates from Kaggle.com</li>
+ </ul>
+## Data Structures
+## User Experience
 # Conclusions
