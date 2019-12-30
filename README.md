@@ -13,6 +13,12 @@ Forex is unpredictable and has to many unknown factors that contribute uniquely 
   <li>News articles from Kaggle.com</li>
   <li>Major events with dates from Kaggle.com</li>
  </ul>
+ 
 ## Data Structures
+<ul>
+  <li>Join data based on currency used in the area</li>
+  <li>Join data based on date of event, with market data for that day</li>
+  </ul>
+  
 ## User Experience
 # Conclusions
